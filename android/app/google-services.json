@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "837434895352",
+    "project_id": "isearchpfe",
+    "storage_bucket": "isearchpfe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837434895352:android:9cd6fb5d5921451173840d",
+        "android_client_info": {
+          "package_name": "com.example.pfe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "837434895352-to3oap97qc3jrt688n3au8auilkr67fn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOjvqgbfqhlipTTuOqllgokgl4uz3Vvtc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "837434895352-to3oap97qc3jrt688n3au8auilkr67fn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
