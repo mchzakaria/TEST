@@ -1,41 +1,7 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:pfe/test/auth.dart';
+import 'package:pfe/widget/widgets.dart';
 
-class LoginS extends StatefulWidget {
-  const LoginS({Key? key}) : super(key: key);
-
-  @override
-  State<LoginS> createState() => _LoginState();
-}
-
-class _LoginState extends State<LoginS> {
-  final emailcontroller = TextEditingController();
-  final passwordcontroller = TextEditingController();
-
-  void login() async {
-    Auth auth = Auth();
-    try {
-      await auth.signInWithEmailAndPassword(
-          email: emailcontroller.text, 
-          password: passwordcontroller.text
-          );
-    } on FirebaseAuthException catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(Text(
-        e.message.toString(),
-      ) as SnackBar);
-    }
-  }
-
-  @override
-  void dispose() {
-    emailcontroller.dispose();
-    passwordcontroller.dispose();
-    super.dispose();
-  }
+class Signup extends StatelessWidget {
+  const Signup({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -54,13 +20,25 @@ class _LoginState extends State<LoginS> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(
-                        height: 35,
+                        height: 40,
                       ),
-                      Text(
-                        "Log in",
-                        style: TextStyle(fontSize: 33, fontFamily: "myfont"),
+                      Text( 
+                        "Sign up",
+                        style: TextStyle(
+                            fontSize: 35,
+                            fontFamily: "myfont",
+                            color: Colors.grey[800]),
                       ),
-                      Image.asset("assets/images/clogo.png", width: 290),
+                      SizedBox(
+                        height: 21,
+                      ),
+                      Image.asset(
+                        "assets/images/clogo.png",
+                        // height: 222,
+                      ),
+                      SizedBox(
+                        height: 27,
+                      ),
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.blue[100],
@@ -69,7 +47,6 @@ class _LoginState extends State<LoginS> {
                         width: 266,
                         padding: EdgeInsets.symmetric(horizontal: 16),
                         child: TextField(
-                          controller: emailcontroller,
                           decoration: InputDecoration(
                               icon: Icon(
                                 Icons.person,
@@ -89,13 +66,12 @@ class _LoginState extends State<LoginS> {
                         ),
                         width: 266,
                         padding: EdgeInsets.symmetric(horizontal: 16),
-                        child: TextField(
-                          controller: passwordcontroller,
+                        child: TextField (
                           obscureText: true,
                           decoration: InputDecoration(
                               suffix: Icon(
                                 Icons.visibility_off,
-                                color: Colors.grey[800],
+                                color: Colors.grey[900],
                               ),
                               icon: Icon(
                                 Icons.lock,
@@ -107,44 +83,45 @@ class _LoginState extends State<LoginS> {
                         ),
                       ),
                       SizedBox(
-                        height: 22,
+                        height: 17,
                       ),
                       ElevatedButton(
-                        onPressed: login,
+                        onPressed: () {},
                         style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all(Colors.blue[400]),
                           padding: MaterialStateProperty.all(
                               EdgeInsets.symmetric(
-                                  horizontal: 103, vertical: 12)),
+                                  horizontal: 93, vertical: 12)),
                           shape: MaterialStateProperty.all(
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(27))),
                         ),
                         child: Text(
-                          "Login",
+                          "Sign up",
                           style: TextStyle(fontSize: 22),
                         ),
                       ),
                       SizedBox(
-                        height: 17,
+                        height: 33,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Don't have an account? "),
+                          Text("Already have an accout? "),
                           GestureDetector(
-                              onTap: () {
-                                Navigator.pushNamed(context, "/signup");
-                              },
-                              child: Text(
-                                " Sign up",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              )),
+                            onTap: () {
+                               Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+                            },
+                            child: Text(
+                              " Log in",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ),
                         ],
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 17,
                       ),
                       SizedBox(
                         width: 299,
@@ -155,18 +132,14 @@ class _LoginState extends State<LoginS> {
                               thickness: 0.6,
                               color: Colors.grey[900],
                             )),
-                            SizedBox(
-                              width: 7,
-                            ),
+                            SizedBox( width: 7,),
                             Text(
                               "OR",
                               style: TextStyle(
                                 color: Colors.grey[900],
                               ),
                             ),
-                            SizedBox(
-                              width: 7,
-                            ),
+                            SizedBox( width: 7,),
                             Expanded(
                                 child: Divider(
                               thickness: 0.6,
@@ -185,11 +158,10 @@ class _LoginState extends State<LoginS> {
                               child: Container(
                                 // padding: EdgeInsets.all(9),
                                 decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
+                                    shape: BoxShape.circle,
                                 ),
                                 child: SvgPicture.asset(
-                                  "assets/icons/fb.svg",
-                                  width: 57,
+                                  "assets/icons/fb.svg", width: 57,
                                 ),
                               ),
                             ),
@@ -201,11 +173,11 @@ class _LoginState extends State<LoginS> {
                               child: Container(
                                 // padding: EdgeInsets.all(13),
                                 decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
+                                    shape: BoxShape.circle,
                                 ),
                                 child: SvgPicture.asset(
-                                    "assets/icons/gmail.svg",
-                                    width: 44),
+                                  "assets/icons/gmail.svg", width: 44
+                                ),
                               ),
                             ),
                             SizedBox(
@@ -216,8 +188,8 @@ class _LoginState extends State<LoginS> {
                               child: Container(
                                 padding: EdgeInsets.all(13),
                                 decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                ),
+                                    shape: BoxShape.circle,
+                              ),
                                 child: SvgPicture.asset(
                                   "assets/icons/twitter.svg",
                                   color: Colors.blue[400],
