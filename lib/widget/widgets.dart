@@ -1,6 +1,6 @@
 export 'package:flutter/material.dart';
 export 'package:pfe/Pages/HomePage.dart';
-// export 'package:pfe/Pages/loadingpage.dart';
+export 'package:pfe/Pages/loadingpage.dart';
 export 'package:pfe/Pages/firebase_options.dart';
 export 'package:firebase_auth/firebase_auth.dart';
 export 'package:firebase_core/firebase_core.dart';
@@ -10,4 +10,8 @@ export 'dart:async';
 export 'package:pfe/Pages/welcome.dart';
 export 'package:flutter_svg/svg.dart';
 export 'package:flutter_svg/flutter_svg.dart';
-
+export 'package:pfe/auth/ForgotPassword.dart';
+export 'package:pfe/Pages/quisommesnous.dart';
+export 'package:curved_navigation_bar/curved_navigation_bar.dart';
+export 'package:pfe/Pages/bottomNav.dart';
+export 'package:pfe/Pages/profile.dart';

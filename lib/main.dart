@@ -1,5 +1,4 @@
 import 'package:pfe/widget/widgets.dart';
-import 'package:pfe/Pages/loadingpage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,8 +21,9 @@ class MyApp extends StatelessWidget {
         stream: FirebaseAuth.instance.userChanges(),
         builder: (context, snapchot) {
           if (snapchot.hasData) {
-            return HomePage();
-          } else {
+            return BottomNav();
+          }
+          else {
             return LoadingPage();
           }
         },

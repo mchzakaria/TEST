@@ -2,14 +2,13 @@
 
 import 'package:pfe/widget/widgets.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Profile extends StatefulWidget {
+  const Profile({super.key});
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Profile> createState() => _ProfileState();
 }
 
-class _HomePageState extends State<HomePage> {
-
+class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,7 +20,7 @@ class _HomePageState extends State<HomePage> {
             Icon(Icons.search),
           ],
         ),
-        body:SingleChildScrollView(
+        body: SingleChildScrollView(
           child: Column(
             children: [
               Container(
@@ -87,54 +86,11 @@ class _HomePageState extends State<HomePage> {
                 width: MediaQuery.of(context).size.width,
                 height: 100,
                 color: Color.fromARGB(255, 198, 27, 27),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => quisommes()));
-                  },
-                  child: Text("Go to ?"),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                padding: EdgeInsets.only(top: 10),
-                width: MediaQuery.of(context).size.width,
-                height: 100,
-                color: Color.fromARGB(255, 198, 27, 27),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                padding: EdgeInsets.only(top: 10),
-                width: MediaQuery.of(context).size.width,
-                height: 100,
-                color: Color.fromARGB(255, 198, 27, 27),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                padding: EdgeInsets.only(top: 10),
-                width: MediaQuery.of(context).size.width,
-                height: 100,
-                color: Color.fromARGB(255, 198, 27, 27),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                padding: EdgeInsets.only(top: 10),
-                width: MediaQuery.of(context).size.width,
-                height: 100,
-                color: Color.fromARGB(255, 198, 27, 27),
               ),
             ],
           ),
         ),
-        ),
+      ),
     );
   }
 }

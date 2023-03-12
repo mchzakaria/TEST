@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:pfe/widget/widgets.dart';
 import '../auth/auth.dart';
 
@@ -55,6 +57,7 @@ class _LoginState extends State<Login> {
                         style: TextStyle(fontSize: 33, fontFamily: "myfont"),
                       ),
                       Image.asset("assets/images/clogo.png", width: 290),
+                      // Email TextField
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.blue[100],
@@ -76,6 +79,8 @@ class _LoginState extends State<Login> {
                       SizedBox(
                         height: 23,
                       ),
+
+                      // Password TextField
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.blue[100],
@@ -100,21 +105,32 @@ class _LoginState extends State<Login> {
                               border: InputBorder.none),
                         ),
                       ),
-                      GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Signup()));
-                          },
-                          child: const Text(
-                            "Forgot Your Password?",
-                            style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.bold),
-                          )),
-                      SizedBox(
-                        height: 15,
+
+                      // Forget Password
+                      Container(
+                        padding: EdgeInsets.only(left: 130, top: 6),
+                        child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          ForgotPasswordPage()));
+                            },
+                            child: const Text(
+                              "Forgot Your Password?",
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.blue,
+                                  fontWeight: FontWeight.bold),
+                            )),
                       ),
+
+                      SizedBox(
+                        height: 12,
+                      ),
+
+                      // Button Login
                       ElevatedButton(
                         onPressed: login,
                         style: ButtonStyle(
@@ -132,9 +148,12 @@ class _LoginState extends State<Login> {
                           style: TextStyle(fontSize: 22),
                         ),
                       ),
+
                       SizedBox(
                         height: 17,
                       ),
+
+                      // Don't have account , go to sign up
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -148,13 +167,18 @@ class _LoginState extends State<Login> {
                               },
                               child: Text(
                                 " Sign up",
-                                style: TextStyle(fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.bold),
                               )),
                         ],
                       ),
+
                       SizedBox(
                         height: 10,
                       ),
+
+                      // Black Line
                       SizedBox(
                         width: 299,
                         child: Row(
@@ -184,6 +208,8 @@ class _LoginState extends State<Login> {
                           ],
                         ),
                       ),
+
+                      // SVG Pics
                       Container(
                         margin: EdgeInsets.symmetric(vertical: 5),
                         child: Row(
@@ -202,9 +228,11 @@ class _LoginState extends State<Login> {
                                 ),
                               ),
                             ),
+                            // Facebook
                             SizedBox(
                               width: 22,
                             ),
+                            // Gmail
                             GestureDetector(
                               onTap: () {},
                               child: Container(
@@ -217,9 +245,12 @@ class _LoginState extends State<Login> {
                                     width: 44),
                               ),
                             ),
+
                             SizedBox(
                               width: 22,
                             ),
+
+                            // Twitter
                             GestureDetector(
                               onTap: () {},
                               child: Container(
